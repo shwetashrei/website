@@ -7,16 +7,18 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
+        <link rel="icon" type="image/png" href="img/favicon.png">
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
 
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://itsmattburgess.co.uk">
         <meta property="og:title" content="Matt Burgess - Software Engineer">
-        <meta property="og:description" content="I'm an experienced PHP developer with a wide range of SaaS skills looking to move my focus to infrastructure automation.">
-        <meta name="twitter:title" content="Matt Burgess - Software Engineer">
-        <meta name="twitter:description" content="I'm an experienced PHP developer with a wide range of SaaS skills looking to move my focus to infrastructure automation.">
+        <meta property="og:image" content="http://itsmattburgess.co.uk/img/me.png">
+        <meta property="og:description" content="Hi! It's Matt Burgess here. I'm an experienced PHP developer with a wide range of SaaS skills looking to move my focus to infrastructure automation and architecture.">
+        <meta property="og:site_name" content="Matt Burgess - Software Engineer">
+        <meta property="og:locale" content="en_GB">
     </head>
     <body>
         <div class="container">
@@ -45,7 +47,7 @@
             </div>
 
             <h1 class="brief-description">
-                I'm an experienced PHP developer with a wide range of SaaS skills looking to move my focus to infrastructure automation, site reliability and AWS infrastructure solutions.
+                I'm an experienced PHP developer with a wide range of SaaS skills looking to move my focus to infrastructure architecture, automation, service reliability and AWS solutions.
             </h1>
 
             <div class="sections">
@@ -56,21 +58,21 @@
                         <h3><a href="https://idgateway.co.uk">IDGateway</a></h3>
                         <div class="role">Senior Developer</div>
                         <div class="dates">Jul 2017 - Present</div>
-                        <p class="responsibilities">Responsible for planning and delivering large projects and ongoing maintenance of the platform. Currently executing the migration of our SaaS application used by major UK airports to a secure AWS cloud infrastructure using orchestration tools. Influencial in the extraction of the monolith application to a micro-service architecture. Managing a small team, improving skills through coaching and code reviews. Instrumental in improving proceedures and technoligical standards.</p>
+                        <p class="responsibilities">Responsible for planning and delivering large projects and ongoing maintenance of the platform. Currently executing the migration of our SaaS application used by major UK airports to a secure AWS cloud infrastructure using orchestration tools. Influencial in the extraction of the monolith application to a micro-service architecture. Instrumental in improving technical proceedures and standards through feedback and the sharing of best practice knowledge.</p>
                     </div>
 
                     <div class="position">
                         <h3><a href="http://procius.com">Procius</a></h3>
                         <div class="role">Lead Developer</div>
                         <div class="dates">Jul 2013 - Jul 2017</div>
-                        <p class="responsibilities">Responsible for system stability, infrastructure management, features development and maintence of the platform on a day ot day basis. Instrumental in upgrading legacy areas of the platform to a Laravel based foundation. Experienced in deploying and implementing the replacement code without downtime or negative impact to the user experience. Managed a small team, coaching best practices and improving skills through the use of code reviews.</p>
+                        <p class="responsibilities">Responsible for system stability, infrastructure management, feature development and maintenance of the platform on a day to day basis. Upgraded legacy areas of the platform to a Laravel based foundation with a full suite of unit and integration tests, following the domain driven design pattern. Experienced in deploying and implementing modern code without downtime or negative impact to the user experience. Managed a small team, coaching best practices and improving skills through the use of code reviews and paired programming.</p>
                     </div>
 
                     <div class="position">
                         <h3><a href="http://three.co.uk">Hutchison 3G (Three UK)</a></h3>
                         <div class="role">Assistant Manager</div>
                         <div class="dates">Oct 2008 - Jul 2013</div>
-                        <p class="responsibilities">Managed of a team of 10 sales assistants ensuring performance against sales and customer services KPIs. Responsible for ensuring the performance of the store, and assisting the manager where required. Ensured compliance with company policies, provided customer support and sales. My performance was recognised when I was placed in the top 20 managers in the company, being rewarded with a night out in London with the other 19 managers from around the country.</p>
+                        <p class="responsibilities">Managed of a team of 10 sales assistants ensuring performance against sales and customer service KPIs. Responsible for ensuring the performance of the store, and assisting the manager where required. Ensured compliance with company policies, provided customer support and sales. My performance was recognised when I was placed in the top 20 managers in the company, being rewarded with a night out in London with the other 19 managers from around the country.</p>
                     </div>
                 </div>
 
@@ -86,6 +88,14 @@
                         <li>Redis</li>
                     </ul>
 
+                    <h3 class="tools">PHP skills</h3>
+                    <ul>
+                        <li>Experienced with Laravel 5.1+</li>
+                        <li>Some experience of the Yii 1.1 framework</li>
+                        <li>Unit testing with PHPUnit</li>
+                        <li>Design patterns: DRY, SOLID, TDD &amp; DDD</li>
+                    </ul>
+
                     <h3 class="tools">Orchestation &amp; tools</h3>
                     <ul>
                         <li>Ansible</li>
@@ -98,13 +108,28 @@
                 <div class="contact-me">
                     <h2>Contact me</h2>
                     <p>
-                        Email: <a href="mailto:matt.burgess92@googlemail.com">matt.burgess92@googlemail.com</a><br>
-                        Tel: <a href="tel:07469030877">07469 030 877</a>
+                        <img class="avatar" src="img/me.png" width="100" height="100">
+                        Email:<br><a href="mailto:matt.burgess92@googlemail.com">matt.burgess92@googlemail.com</a><br><br>
+                        Tel:<br><a href="tel:07469030877">07469 030 877</a>
                     </p>
 
                     <p>If you would like to discuss working together, my preferred method of communication is through email or Linkedin. If however, you want to discuss technical, or 'geeky' topics, <a href="https://twitter.com/itsMattBurgess">tweet me</a>.</p>
+
+                    <h3 class="interests">Interests</h3>
+                    <ul>
+                        <li>Learning &amp; playing with new technology</li>
+                        <li>House of Cards</li>
+                        <li>Unplanned adventures &amp; exploring</li>
+                        <li>Golf &amp; Football</li>
+                    </ul>
                 </div>
             </div>
         </div>
+
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-109668380-1','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
     </body>
 </html>
