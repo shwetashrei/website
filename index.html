@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Matt Burgess - Software Engineer</title>
-        <meta name="description" content="">
+        <meta name="description" content="Hi! It's Matt Burgess here. I'm an experienced PHP developer with a wide range of SaaS skills looking to move my focus to infrastructure automation and architecture.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/png" href="img/favicon.png">
@@ -47,10 +47,19 @@
             </div>
 
             <h1 class="brief-description">
+                <img class="avatar" src="img/me.png" alt="Matt Burgess" width="75" height="75">
                 I'm an experienced PHP developer with a wide range of SaaS skills looking to move my focus to infrastructure architecture, automation, service reliability and AWS solutions.
             </h1>
 
             <div class="sections">
+                <div class="articles">
+                    <h2><a href="https://medium.com/@itsmattburgess">Latest stories</a></h2>
+                    <section class="section blog" id="blog">
+                        <div class="section-content" id="blogContent">
+                          <div class="row" id="jsonContent"></div>
+                        </div>
+                    </section>
+                </div>
                 <div class="experience">
                     <h2>Experience</h2>
 
@@ -58,7 +67,7 @@
                         <h3><a href="https://idgateway.co.uk">IDGateway</a></h3>
                         <div class="role">Senior Developer</div>
                         <div class="dates">Jul 2017 - Present</div>
-                        <p class="responsibilities">Responsible for planning and delivering large projects and ongoing maintenance of the platform. Currently executing the migration of our SaaS application used by major UK airports to a secure AWS cloud infrastructure using orchestration tools. Influencial in the extraction of the monolith application to a micro-service architecture. Instrumental in improving technical proceedures and standards through feedback and the sharing of best practice knowledge.</p>
+                        <p class="responsibilities">Responsible for planning and delivering large projects and ongoing maintenance of the platform. Currently executing the migration of our SaaS application used by major UK airports to a secure AWS cloud infrastructure using orchestration tools. Intrumental in the extraction of the monolith application to a micro-service architecture and improving technical proceedures and standards through feedback and the sharing of best practice knowledge.</p>
                     </div>
 
                     <div class="position">
@@ -107,10 +116,7 @@
 
                 <div class="contact-me">
                     <h2>Contact me</h2>
-                    <p>
-                        <img class="avatar" src="img/me.png" width="100" height="100">
-                        Email:<br><a href="mailto:matt.burgess92@googlemail.com">matt.burgess92@googlemail.com</a><br>
-                    </p>
+                    <p>Email: <a href="mailto:matt.burgess92@googlemail.com">matt.burgess92@googlemail.com</a><br></p>
 
                     <p>If you would like to discuss working together, my preferred method of communication is through email or Linkedin. If however, you want to discuss technical, or 'geeky' topics, <a href="https://twitter.com/itsMattBurgess">tweet me</a>.</p>
 
@@ -127,10 +133,45 @@
             </div>
         </div>
 
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-109668380-1','auto');ga('send','pageview')
-        </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+        window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+        ga('create','UA-109668380-1','auto');ga('send','pageview')
+
+        // Obtaining medium articles using code provided by https://medium.jasonmdesign.com/display-medium-articles-on-your-site-d772b3b05779
+        $(document).ready(function () {
+            $(function () {
+                var $content = $('#jsonContent');
+                var data = {
+                    api_key: 'co3mgpnhyjyprjrg71vlovwzi60duq8lrrqqtqja',
+                    rss_url: 'https://medium.com/feed/@itsmattburgess'
+                };
+                $.get('https://api.rss2json.com/v1/api.json', data, function (response) {
+                    if (response.status == 'ok') {
+                        var output = '';
+                        $.each(response.items, function (k, item) {
+                            output += '<div class="blog-post"><a href="'+ item.link + '"><header>';
+                            var tagIndex = item.description.indexOf('<img');
+                            var srcIndex = item.description.substring(tagIndex).indexOf('src=') + tagIndex;
+                            var srcStart = srcIndex + 5;
+                            var srcEnd = item.description.substring(srcStart).indexOf('"') + srcStart;
+                            var src = item.description.substring(srcStart, srcEnd);
+                            output += '<img src="' + src + '"></header>';
+                            output += '<h4>' + item.title + '</h4>';
+                            var yourString = item.description.replace(/<img[^>]*>/g,"");
+                            var maxLength = 250
+                            var trimmedString = yourString.substr(0, maxLength);
+                            trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+                            output += '<p>' + trimmedString + '...</p>';
+                            output += '</a></div>';
+                            return k < 3;
+                        });
+                        $content.html(output);
+                    }
+                });
+            });
+        });
+        </script>
     </body>
 </html>
