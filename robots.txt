@@ -1,2 +1,3 @@
+Sitemap: https://itsmattburgess/sitemap.xml
 User-agent: *
 Disallow:
