@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,500');
 
-$break-small: 1080px;
+$break-small: 1100px;
 
 body {
     font-size: 14px;
@@ -21,7 +21,7 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1160px;
+    max-width: 1460px;
     margin: 50px auto 0 auto;
 }
 
@@ -108,8 +108,18 @@ ul {
 .brief-description {
     margin: 50px 0;
 
+    img {
+        float: left;
+        display: inline-block;
+        margin: 10px 15px 0 0;
+    }
+
     @media screen and (max-width: $break-small) {
         text-align: center;
+
+        img {
+            display: none;
+        }
     }
 }
 
@@ -123,7 +133,8 @@ ul {
 
         .experience,
         .skills,
-        .contact-me {
+        .contact-me,
+        .articles {
             width: 100%;
             margin: 50px 0 0 0;
         }
@@ -132,7 +143,7 @@ ul {
     >div {
         flex-grow: 1;
         margin: 0 25px;
-        width: 28%;
+        width: 25%;
 
         &:first-child {
             margin-left: 0;
@@ -192,5 +203,22 @@ ul {
 
     .interests {
         margin-top: 40px;
+    }
+}
+
+.blog-post {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 1px #999;
+    margin-bottom: 20px;
+    border-radius: 3px;
+
+    header {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
     }
 }
